@@ -1,0 +1,36 @@
+CREATE EXTERNAL TABLE ds_prod.indeks_pembangunan_manusia_jateng (
+    wilayah                                      	 STRING,
+    tahun                                        	 INT,
+    usia_harapan_hidup_saat_lahir_tahun          	 DOUBLE,
+    harapan_lama_sekolah_tahun                   	 DOUBLE,
+    rata_rata_lama_sekolah_tahun                  	DOUBLE,
+    pengeluaran_per_kapita_ribu_rupiah_orang_tahun 	DOUBLE,
+    indeks_pembangunan_manusia                    	DOUBLE,
+    execute_time					DATE
+)
+STORED AS ORC
+LOCATION '/hive_external_data/ds_pemda/kemiskinan/jawa_tengah/indeks_pembangunan_manusia';
+
+------------------------------------------------------------------------------------------
+
+CREATE EXTERNAL TABLE ds_prod.akses_air_minum_layak_jateng (
+    wilayah                                      	STRING,
+    tahun                                        	INT,
+    persentase_akses_rumah_ke_air_minum_yang_layak	DOUBLE,
+    execute_time					DATE
+)
+STORED AS ORC
+LOCATION '/hive_external_data/ds_pemda/kemiskinan/jawa_tengah/akses_air_minum_layak';
+
+------------------------------------------------------------------------------------------
+
+CREATE EXTERNAL TABLE ds_prod.pengangguran_persentase_jateng (
+    wilayah                                      	STRING,
+    tahun                                        	INT,
+    laki_laki						DOUBLE,
+    perempuan 						DOUBLE,
+    total 						DOUBLE,
+    execute_time					DATE
+)
+STORED AS ORC
+LOCATION '/hive_external_data/ds_pemda/kemiskinan/jawa_tengah/pengangguran';
